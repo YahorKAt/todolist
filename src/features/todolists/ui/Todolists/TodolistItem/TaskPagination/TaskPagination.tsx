@@ -1,0 +1,32 @@
+import Pagination from "@mui/material/Pagination"
+import { ChangeEvent } from "react"
+import { PAGE_SIZE } from "@/common/constants/constants"
+import styles from "./TaskPagination.module.css"
+
+type Props = {
+    totalCount: number
+    page: number
+    setPage: (page: number) => void
+}
+
+export const TasksPagination = ({ totalCount, page, setPage }: Props) => {
+    const changePage = (_: ChangeEvent<unknown>, page: number) => {
+        setPage(page)
+    }
+    const countPages = Math.ceil(totalCount / PAGE_SIZE)
+
+    return (
+        <>
+            {countPages > 1 && (
+                <Pagination
+                    count={Math.ceil(totalCount / PAGE_SIZE)}
+                    page={page}
+                    onChange={changePage}
+                    shape="rounded"
+                    color="primary"
+                    className={styles.pagination}
+                />
+            )}
+        </>
+    )
+}
