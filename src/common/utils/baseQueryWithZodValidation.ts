@@ -15,13 +15,15 @@ export const baseQueryWithZodValidation: (baseQuery: TBaseQuery) => TBaseQuery =
     (baseQuery: TBaseQuery) => async (args, api, extraOptions) => {
         const returnValue = await baseQuery(args, api, extraOptions)
 
+        if (returnValue.error) {
+            return returnValue
+        }
+
         const zodSchema = extraOptions?.dataSchema
 
-        const { data } = returnValue
-
-        if (data && zodSchema) {
+        if (returnValue.data && zodSchema) {
             try {
-                zodSchema.parse(data)
+                zodSchema.parse(returnValue.data)
             } catch (error) {
                 if (error instanceof z.ZodError) {
                     console.table(error.issues)

@@ -27,7 +27,7 @@ export const Login = () => {
     const dispatch = useAppDispatch()
 
     const [login] = useLoginMutation()
-    const { data, refetch } = useMeQuery()
+    const { refetch } = useMeQuery()
     const [getCaptchaUrl, { data: captcha }] = useLazyGetCaptchaUrlQuery()
 
     const { handleSubmit, control, reset, setError, setValue, clearErrors } = useForm<LoginInputs>({

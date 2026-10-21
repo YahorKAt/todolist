@@ -56,7 +56,7 @@ export const Header = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, padding: "20px" }}>
                         Title Site
                     </Typography>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: "220px" }}>
                         {isLoggedIn && (
                             <>
                                 <Typography variant="subtitle1" component="h2">
