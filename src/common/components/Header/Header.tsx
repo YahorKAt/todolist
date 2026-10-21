@@ -50,12 +50,12 @@ export const Header = () => {
         <AppBar position="static" sx={{ mb: "30px" }}>
             <Toolbar>
                 <Container maxWidth="lg" sx={containerSx}>
-                    <IconButton color="inherit">
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, padding: "20px" }}>
-                        Title Site
-                    </Typography>
+                    {/*<IconButton color="inherit">*/}
+                    {/*    <MenuIcon />*/}
+                    {/*</IconButton>*/}
+                    {/*<Typography variant="h6" component="div" sx={{ flexGrow: 1, padding: "20px" }}>*/}
+                    {/*    Title Site*/}
+                    {/*</Typography>*/}
                     <Box sx={{ display: "flex", alignItems: "center", gap: "20px", backgroundColor: "red" }}>
                         {isLoggedIn && (
                             <>
